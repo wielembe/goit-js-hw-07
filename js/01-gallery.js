@@ -7,7 +7,7 @@ const galleryList = document.querySelector(".gallery");
 
 const galleryElements = galleryItems
     .map((picture) => {
-        return `<li><div class="gallery__item">
+        return `<li class="gallery__item">
      <a class="gallery__link" href="${picture.original}">
        <img
         class="gallery__image"
