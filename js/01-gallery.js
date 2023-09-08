@@ -20,24 +20,24 @@ const galleryElements = galleryItems
     })
     .join("");
 
-// galleryList.innerHTML = galleryElements;
+galleryList.innerHTML = galleryElements;
 
-// galleryList.addEventListener("click", selectImage);
+galleryList.addEventListener("click", selectImage);
 
-// function selectImage(event) {
-//     event.preventDefault();
-//     if (event.target.nodeName !== "IMG") {
-//         return;
-//     }
-//     const selectedImage = event.target.dataset.source;
-//     const openedImage = basicLightbox.create(`<img src=` + selectedImage + `>`);
-//     openedImage.show();
+function selectImage(event) {
+    event.preventDefault();
+    if (event.target.nodeName !== "IMG") {
+        return;
+    }
+    const selectedImage = event.target.dataset.source;
+    const openedImage = basicLightbox.create(`<img src=` + selectedImage + `>`);
+    openedImage.show();
 
-//     document.addEventListener("keydown", escapePress);
-//     function escapePress(eventKey) {
-//         if (eventKey.code === "Escape") {
-//             openedImage.close();
-//             document.removeEventListener("keydown", escapePress);
-//         }
-//     }
-// }
+    document.addEventListener("keydown", escapePress);
+    function escapePress(eventKey) {
+        if (eventKey.code === "Escape") {
+            openedImage.close();
+            document.removeEventListener("keydown", escapePress);
+        }
+    }
+}
